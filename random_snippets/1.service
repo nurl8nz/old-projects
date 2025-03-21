@@ -1,0 +1,12 @@
+[Unit]
+Description=BALANCE CHANGER
+After=multi-user.target
+ 
+[Service]
+Type=simple
+Restart=always
+ExecStart=/root/py-services/balancechanger/venv/bin/python /root/py-services/balancechanger/balancer.py --reload
+WorkingDirectory=/root/py-services/balancechanger
+ 
+[Install]
+WantedBy=multi-user.target
